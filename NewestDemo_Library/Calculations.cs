@@ -21,7 +21,6 @@ namespace NewestDemo_Library
                 IDictionary<TimeSpan, int> breakTimes = startTimes.Zip(durations, (key, value) => new { key, value })
                                                                   .ToDictionary(val => val.key, val => val.value);
 
-
                 var results = CompleteIterationProcess(iterator, consultationTime, workingHours, breakTimes);
                 return GenerateResponseByCalculationResult(results);
             }
@@ -82,7 +81,7 @@ namespace NewestDemo_Library
 
         private static TimeSpan CalculateWorkingHoursByValues(TimeSpan beginWorkingTime, TimeSpan endWorkingTime)
         {
-            if (beginWorkingTime > endWorkingTime)
+            if (beginWorkingTime >= endWorkingTime)
                 endWorkingTime = endWorkingTime.Add(TimeSpan.FromDays(1));
 
             return new TimeSpan(endWorkingTime.Ticks - beginWorkingTime.Ticks);
@@ -101,7 +100,7 @@ namespace NewestDemo_Library
         {
             foreach (var breakTime in breakTimes)
             {
-                foreach (var minuteOffset in Enumerable.Range(0, allowedSpace + 1))
+                foreach (var minuteOffset in Enumerable.Range(0, allowedSpace))
                 {
                     if (breakTime.Key == currentTime.Add(TimeSpan.FromMinutes(minuteOffset)))
                         return (breakTime.Key, breakTime.Value, minuteOffset);
