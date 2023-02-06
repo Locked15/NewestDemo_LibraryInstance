@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewestDemo_Library", "Newes
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NewestDemo_Tests", "NewestDemo_Tests\NewestDemo_Tests.csproj", "{D4A39A66-143E-4E42-931E-15F589159C5A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExecutableElement", "Temp\ExecutableElement.csproj", "{31B9AB32-BEEA-4851-A838-417636C0DA4B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ExecutableElement", "ExecutableElement\ExecutableElement.csproj", "{31B9AB32-BEEA-4851-A838-417636C0DA4B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
